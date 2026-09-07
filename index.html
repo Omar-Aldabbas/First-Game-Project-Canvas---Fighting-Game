@@ -1,36 +1,30 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="styles.css">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
 
-<body>
-  <div class="game-container">
+  <body>
+    <div class="game-container">
+      <div class="result">TIE</div>
+      <div class="game-ui">
+        <!-- Player Health -->
+        <div class="player-health">
+          <span class="player-health-fill"></span>
+        </div>
 
-    <div class="game-ui">
+        <!-- Timer -->
+        <div class="timer">10</div>
 
-      <!-- Player Health -->
-      <div class="player-health">
-        <span class="player-health-fill"></span>
+        <!-- Enemy Health -->
+        <div class="enemy-health">
+          <span class="enemy-health-fill"></span>
+        </div>
       </div>
-
-      <!-- Timer -->
-      <div class="timer"></div>
-
-      <!-- Enemy Health -->
-      <div class="enemy-health">
-        <span class="enemy-health-fill"></span>
-      </div>
-
+      <canvas></canvas>
     </div>
 
-    <canvas></canvas>
-
-  </div>
-
-  <script src="index.js"></script>
-</body>
+    <script type="module" src="index.js"></script>
+  </body>
 </html>
-
-

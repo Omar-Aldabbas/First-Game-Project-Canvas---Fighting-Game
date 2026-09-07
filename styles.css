@@ -10,7 +10,7 @@ body {
 .game-container {
   display: flex;
   flex-direction: column;
-  height: 90vh;
+  height: 100vh;
 
   position: relative;
 }
@@ -35,42 +35,71 @@ canvas {
 }
 
 .player-health {
-  background-color: yellow;
+  background-color: transparent;
   z-index: 999;
+  border: 3px solid grey;
+  border-top-left-radius: 0.8rem;
+  border-bottom-left-radius: 0.8rem;
+  border-right: 0;
   flex: 1;
   height: 4vh;
+  overflow: hidden;
 }
 
 .timer {
   background-color: rgb(60, 9, 241);
   width: 8rem;
   height: 8vh;
-  
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4rem;
 }
 
 .enemy-health {
-  background-color: red;
+  background-color: transparent;
   flex: 1;
+  border: 3px solid grey;
+  border-left: 0;
+  border-top-right-radius: 0.8rem;
+  border-bottom-right-radius: 0.8rem;
   height: 4vh;
+  overflow: hidden;
 }
 
 /* health bar */
 
 /* player */
 .player-health-fill {
-    display: block;
-    width: 75%;
-    height: 4vh;
-    background: #fa0795;
+  display: block;
+  width: 100%;
+  height: 100%;
 
-    margin-left: auto;
+  background: #fa0707;
+  /* border-radius: 0.8rem 0 0 0.8rem; */
+
+  margin-left: auto;
 }
 
-
 .enemy-health-fill {
-    display: block;
-    width: 90%;
-    height: 4vh;
-    background: #07fab1;
-    margin-right: auto;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #fa0707;
+  margin-right: auto;
+  /* border-radius: 0 0.8rem 0.8rem 0; */
+}
+
+.result {
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  font-size: 5rem;
+  z-index: 999;
+  color: bisque;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
 }
