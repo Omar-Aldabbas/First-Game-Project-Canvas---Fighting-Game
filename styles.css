@@ -1,0 +1,76 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.game-container {
+  display: flex;
+  flex-direction: column;
+  height: 90vh;
+
+  position: relative;
+}
+
+.game-ui {
+  height: 3rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: absolute;
+  z-index: 999;
+  margin-top: 1.3rem;
+
+  padding: 1rem 2rem;
+}
+
+canvas {
+  flex: 1;
+  min-height: 00;
+}
+
+.player-health {
+  background-color: yellow;
+  z-index: 999;
+  flex: 1;
+  height: 4vh;
+}
+
+.timer {
+  background-color: rgb(60, 9, 241);
+  width: 8rem;
+  height: 8vh;
+  
+}
+
+.enemy-health {
+  background-color: red;
+  flex: 1;
+  height: 4vh;
+}
+
+/* health bar */
+
+/* player */
+.player-health-fill {
+    display: block;
+    width: 75%;
+    height: 4vh;
+    background: #fa0795;
+
+    margin-left: auto;
+}
+
+
+.enemy-health-fill {
+    display: block;
+    width: 90%;
+    height: 4vh;
+    background: #07fab1;
+    margin-right: auto;
+}
