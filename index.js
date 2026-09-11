@@ -1,6 +1,11 @@
 import { Fighter } from "./classes/fighter.js";
 import { Sprite } from "./classes/sprite.js";
-import { decreaseTimer, rectangularCollision, determineWinner } from "./utils/utils.js";
+import {
+  decreaseTimer,
+  rectangularCollision,
+  determineWinner,
+} from "./utils/utils.js";
+import { timerId } from "./utils/utils.js";
 
 const canvas = document.querySelector("canvas");
 const c = canvas.getContext("2d");
@@ -19,27 +24,26 @@ const background = new Sprite({
     x: 0,
     y: 0,
   },
-  imageSrc: './assets/background.png',
+  imageSrc: "./assets/background.png",
   c,
   width: canvas.width,
   height: canvas.height,
-})
-
+});
 
 const shop = new Sprite({
   position: {
     x: 700,
     y: 20,
   },
-  imageSrc: './assets/store.png',
+  imageSrc: "./assets/store.png",
   c,
   width: 1200,
   height: 650,
   framesMax: 8,
-})
+});
 
 // player
-const player = new Fighter({
+export const player = new Fighter({
   position: {
     x: 0,
     y: 0,
@@ -48,17 +52,19 @@ const player = new Fighter({
     x: 0,
     y: 10,
   },
-  offset: {
-    x: 0,
-    y: 0,
-  },
   c,
   canvas,
   width: canvas.width,
   height: canvas.height,
+  imageSrc: "./assets/characters/faris/idle.png",
+  framesMax: 8,
+  offset: {
+    x: 0,
+    y: -65,
+  }
 });
 
-const enemy = new Fighter({
+export const enemy = new Fighter({
   position: {
     x: 400,
     y: 50,
@@ -68,12 +74,14 @@ const enemy = new Fighter({
     y: 10,
   },
   offset: {
-    x: -50,
-    y: 0,
+    x: 0,
+    y: -60,
   },
   color: "blue",
   c,
-  canvas
+  canvas,
+  imageSrc: "./assets/characters/khaled/idle.png",
+  framesMax: 8,
 });
 
 // physics : you need to vcreate animation loop

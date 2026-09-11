@@ -1,3 +1,5 @@
+import { player, enemy } from "../index.js";
+
 export function rectangularCollision({ rect1, rect2 }) {
   return (
     rect1.attackBox.position.x + rect1.attackBox.width >= rect2.position.x && // i understand this its for when we are in the left side of enemy
@@ -23,7 +25,7 @@ export function determineWinner({ player, enemy, timerId }) {
 }
 
 let timer = 60;
-let timerId;
+export let timerId;
 export function decreaseTimer() {
   if (timer > 0) {
     timerId = setTimeout(decreaseTimer, 1000);

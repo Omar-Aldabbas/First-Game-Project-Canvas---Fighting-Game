@@ -2,7 +2,7 @@ export class Sprite {
   /**
    *
    */
-  constructor({ position, imageSrc, c, width, height, framesMax = 1 }) {
+  constructor({ position, imageSrc, c, width, height, framesMax = 1, offset = { x: 0,y: 0 }}) {
     this.position = position;
     this.image = new Image();
 
@@ -13,7 +13,8 @@ export class Sprite {
     this.framesMax = framesMax;
     this.currentFrame = 0;
     this.framesElapsed = 0;
-    this.framesHold = 9;
+    this.framesHold = 16;
+    this.offset = offset;
   }
 
   draw() {
@@ -32,8 +33,8 @@ export class Sprite {
         this.image.naturalHeight,
 
         // destination
-        this.position.x,
-        this.position.y,
+        this.position.x - this.offset.x,
+        this.position.y - this.offset.y,
         this.width / this.framesMax,
         this.height,
       );
