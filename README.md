@@ -2,6 +2,10 @@
 
 A browser fighting game built with HTML, CSS, and JavaScript.
 
+## Play online
+
+[Play the game](https://omar-aldabbas.github.io/First-Game-Project-Canvas---Fighting-Game/)
+
 ## Play locally
 
 Open `index.html` in a modern browser. For the best result, serve the folder with a local web server, such as VS Code Live Server.

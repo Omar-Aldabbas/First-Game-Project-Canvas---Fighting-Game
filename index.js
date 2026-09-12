@@ -60,7 +60,7 @@ export const player = new Fighter({
   c,
   canvas,
 
-  imageSrc: "./assets/characters/khaled/Idle.png",
+  imageSrc: "./assets/characters/khaled/idle.png",
 
   framesMax: 8,
 
@@ -80,7 +80,7 @@ export const player = new Fighter({
 
   sprites: {
     idle: {
-      imageSrc: "./assets/characters/khaled/Idle.png",
+      imageSrc: "./assets/characters/khaled/idle.png",
 
       framesMax: 8,
     },
@@ -113,7 +113,7 @@ export const enemy = new Fighter({
   c,
   canvas,
 
-  imageSrc: "./assets/characters/faris/Idle.png",
+  imageSrc: "./assets/characters/faris/idle.png",
 
   framesMax: 4,
 
@@ -133,7 +133,7 @@ export const enemy = new Fighter({
 
   sprites: {
     idle: {
-      imageSrc: "./assets/characters/faris/Idle.png",
+      imageSrc: "./assets/characters/faris/idle.png",
 
       framesMax: 4,
     },
@@ -197,7 +197,7 @@ const result = document.querySelector(".result");
 const pauseButton = document.querySelector(".pause-button");
 const rematchButton = document.querySelector(".rematch-button");
 const manaCells = [...document.querySelectorAll(".mana-cell")];
-pauseButton.textContent = "||";
+pauseButton.textContent = "Pause";
 // document.querySelector(".controls").textContent = "A/D move - W double jump - Space: attack - Hold S: sword special";
 function updateMana(now) {
   if (mana < maxMana && now >= manaRegenAt) {
@@ -299,7 +299,7 @@ function setPaused(value) {
   setTimerPaused(value);
   overlay.classList.toggle("visible", value);
   result.textContent = "Paused";
-  pauseButton.textContent = value ? "▶" : "Ⅱ";
+  pauseButton.textContent = value ? "Resume" : "Pause";
   pauseButton.setAttribute("aria-label", value ? "Resume game" : "Pause game");
 }
 function updateEnemyAI() {
@@ -535,4 +535,12 @@ window.addEventListener("keyup", (event) => {
     default:
       break;
   }
+});
+
+window.addEventListener("blur", () => {
+  keys.a.pressed = false;
+  keys.d.pressed = false;
+  keys.w.pressed = false;
+  player.isCharging = false;
+  player.chargePower = 0;
 });

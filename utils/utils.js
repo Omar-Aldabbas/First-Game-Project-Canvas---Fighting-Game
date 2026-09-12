@@ -38,7 +38,7 @@ export function decreaseTimer() {
     timerId = setTimeout(decreaseTimer, 1000);
     timer--;
 
-    document.querySelector(".timer").innerHTML = timer;
+    document.querySelector(".timer").textContent = timer;
   }
 
   if (timer === 0) {
