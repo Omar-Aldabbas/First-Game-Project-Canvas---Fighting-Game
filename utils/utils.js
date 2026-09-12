@@ -14,19 +14,26 @@ export function determineWinner({ player, enemy, timerId }) {
   const resultBlock = document.querySelector(".result");
 
   if (player.health === enemy.health) {
-    resultBlock.textContent = "Tie";
+    resultBlock.textContent = "Tie — press R to rematch";
   } else if (player.health > enemy.health) {
-    resultBlock.textContent = "Player 1 Win";
+    resultBlock.textContent = "Player 1 wins — press R to rematch";
   } else {
-    resultBlock.textContent = "Player 2 Win";
+    resultBlock.textContent = "Player 2 wins — press R to rematch";
   }
 
   resultBlock.style.display = "flex";
+  window.dispatchEvent(new Event("gameover"));
 }
 
 let timer = 60;
 export let timerId;
+let timerPaused = false;
+export function setTimerPaused(value) { timerPaused = value; }
 export function decreaseTimer() {
+  if (timerPaused) {
+    timerId = setTimeout(decreaseTimer, 200);
+    return;
+  }
   if (timer > 0) {
     timerId = setTimeout(decreaseTimer, 1000);
     timer--;

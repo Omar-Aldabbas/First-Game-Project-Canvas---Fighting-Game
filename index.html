@@ -7,20 +7,35 @@
 
   <body>
     <div class="game-container">
-      <div class="result">TIE</div>
+      <div class="screen-overlay" aria-live="polite">
+        <div class="result">TIE</div>
+        <button class="rematch-button" type="button">Play again</button>
+      </div>
       <div class="game-ui">
-        <!-- Player Health -->
-        <div class="player-health">
-          <span class="player-health-fill"></span>
+        <div class="fighter-hud player-hud">
+          <span class="fighter-name">Khaled</span>
+          <div class="player-health" aria-label="Khaled health">
+            <span class="player-health-fill"></span>
+          </div>
         </div>
 
-        <!-- Timer -->
-        <div class="timer">10</div>
+        <div class="round-hud">
+          <div class="timer" aria-label="Round timer">60</div>
 
-        <!-- Enemy Health -->
-        <div class="enemy-health">
-          <span class="enemy-health-fill"></span>
+        <button class="pause-button" type="button" aria-label="Pause game">Ⅱ</button>
+
         </div>
+        <div class="fighter-hud enemy-hud">
+          <span class="fighter-name">Faris</span>
+          <div class="enemy-health" aria-label="Faris health">
+            <span class="enemy-health-fill"></span>
+          </div>
+        </div>
+      </div>
+      <div class="controls"></div>
+      <div class="mana-hud" aria-label="Special attack charges">
+        <span class="mana-label">Mana</span>
+        <span class="mana-cell"></span><span class="mana-cell"></span><span class="mana-cell"></span><span class="mana-cell"></span>
       </div>
       <canvas></canvas>
     </div>
